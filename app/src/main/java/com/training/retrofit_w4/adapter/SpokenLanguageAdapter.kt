@@ -43,7 +43,7 @@ class SpokenLanguageAdapter(private val dataSet: List<SpokenLanguage>, private v
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        viewHolder.langText.text = dataSet.get(position).name
+        viewHolder.langText.text = dataSet.get(position).english_name
         viewHolder.langBtn.setBackgroundColor(color)
     }
 

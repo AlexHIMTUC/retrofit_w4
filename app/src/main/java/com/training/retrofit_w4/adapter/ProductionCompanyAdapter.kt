@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.ScrollView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.training.retrofit_w4.R
@@ -22,10 +23,12 @@ class ProductionCompanyAdapter(private val dataSet: List<ProductionCompany>) :
      */
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var PCImage: ImageView
+        var titleText :TextView
 
         init {
             // Define click listener for the ViewHolder's View.
             PCImage = view.findViewById(R.id.PCImage)
+            titleText = view.findViewById(R.id.imgTitleText)
 
         }
     }
@@ -41,8 +44,14 @@ class ProductionCompanyAdapter(private val dataSet: List<ProductionCompany>) :
 
     // Replace the contents of a view (invoked by the layout manager)
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
+        if(dataSet.get(position).logo_path != null){
+            Picasso.get().load(Const.BASE_IMG + dataSet.get(position).logo_path).into(viewHolder.PCImage)
+            viewHolder.titleText.visibility = View.GONE
+        }else{
+            viewHolder.titleText.text = dataSet.get(position).name
+            viewHolder.titleText.visibility = View.VISIBLE
+        }
 
-        Picasso.get().load(Const.BASE_IMG + dataSet.get(position).logo_path).into(viewHolder.PCImage)
 
     }
 

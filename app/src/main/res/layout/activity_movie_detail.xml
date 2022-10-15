@@ -11,8 +11,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
+        android:layout_width="50dp"
+
+        android:layout_height="50dp" />
     <ScrollView
         android:visibility="gone"
         android:id="@+id/mainMovieDetail"
@@ -22,76 +23,188 @@
         android:layout_height="match_parent">
         <LinearLayout
             android:orientation="vertical"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/backdropImg"
-                android:scaleType="fitXY"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_marginBottom="10dp"
-                android:layout_height="200dp" />
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/genreRecyclerView"
-                android:layout_marginBottom="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content">
+                <ImageView
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:id="@+id/backdropImg"
+                    android:scaleType="fitXY"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_height="200dp" />
+                <ImageView
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/backdropImg"
+                    android:layout_marginTop="-70dp"
+                    android:id="@+id/posterImg"
+                    android:scaleType="fitXY"
+                    android:layout_width="100dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_height="150dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:paddingHorizontal="10dp"
+                android:layout_height="wrap_content">
                 <TextView
+                    android:layout_gravity="center"
                     android:id="@+id/titleDetail"
+                    android:textAlignment="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:textSize="30dp"
-                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/black"
                     android:text="TextView" />
 
                 <TextView
-
+                    android:layout_gravity="center"
                     android:id="@+id/releaseDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+
                     android:text="TextView" />
 
-            <TextView
+                <TextView
+                    android:textAlignment="center"
+                    android:id="@+id/sypnosis"
+                    android:layout_width="match_parent"
 
-                android:id="@+id/sypnosis"
-                android:layout_width="match_parent"
-                android:layout_marginHorizontal="10dp"
-                android:layout_height="wrap_content"
-                android:text="wawadawdadadawawdad" />
-            <TextView
-                android:layout_marginTop="10dp"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Spoken Language"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/spokenLanguageRV"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginHorizontal="10dp"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:textSize="30dp"
-                android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:text="wawadawdadadawawdad" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-                android:text="Production Company"
-                />
+                    android:layout_marginTop="10dp"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:text="Additional Information"
+                    />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/PCRecylerView"
-                android:layout_width="match_parent"
-                android:layout_marginLeft="10dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:id="@+id/rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
 
-                android:layout_height="wrap_content" />
+
+
+                        android:text="Rating"
+                        />
+                    <ImageView
+                        app:layout_constraintTop_toTopOf="@id/rating"
+                        app:layout_constraintBottom_toBottomOf="@id/rating"
+                        app:layout_constraintLeft_toRightOf="@id/rating"
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_baseline_star_24"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+                <TextView
+                    android:id="@+id/runtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+
+
+                    android:text="runtime"
+                    />
+                <TextView
+                    android:id="@+id/voteAVG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+
+
+                    android:text="voteAVG"
+                    />
+                <TextView
+                    android:id="@+id/adultMovie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+
+                    android:text="Yes"
+
+                    />
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="30dp"
+
+                    android:textColor="@color/black"
+                    android:text="Genres" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/genreRecyclerView"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spoken Language"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/spokenLanguageRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="10dp"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:text="Production Company"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/PCRecylerView"
+                    android:layout_width="match_parent"
+
+
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
         </LinearLayout>
 
     </ScrollView>
