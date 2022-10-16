@@ -78,7 +78,7 @@
                     android:textAlignment="center"
                     android:id="@+id/sypnosis"
                     android:layout_width="match_parent"
-
+                    android:textSize="15dp"
                     android:layout_height="wrap_content"
                     android:text="wawadawdadadawawdad" />
                 <TextView
@@ -106,6 +106,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Rating"
+                        android:textSize="15dp"
                         />
                     <ImageView
                         app:layout_constraintTop_toTopOf="@id/rating"
@@ -126,19 +127,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="runtime"
+                    android:textSize="15dp"
                     />
                 <TextView
                     android:id="@+id/voteAVG"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="voteAVG"
+                    android:textSize="15dp"
                     />
                 <TextView
                     android:id="@+id/adultMovie"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yes"
-
+                    android:textSize="15dp"
                     />
                 <TextView
                     android:layout_marginTop="10dp"
