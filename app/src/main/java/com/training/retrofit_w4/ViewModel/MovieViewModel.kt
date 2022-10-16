@@ -6,7 +6,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.training.retrofit_w4.model.Movie
 import com.training.retrofit_w4.model.MovieDetail
 import com.training.retrofit_w4.model.Result
 import com.training.retrofit_w4.repository.RetrofitRepository

@@ -1,9 +1,7 @@
 package com.training.retrofit_w4.network
 
-import com.training.retrofit_w4.helper.Const.API_KEY
 import com.training.retrofit_w4.model.Movie
 import com.training.retrofit_w4.model.MovieDetail
-import com.training.retrofit_w4.model.Result
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
