@@ -58,7 +58,7 @@ class MovieDetailActivity : AppCompatActivity() {
         viewModel.MD.observe(this) { response ->
             val bitmap = getBitmap(BASE_IMG + response.poster_path)
             val dominantColor : Int = getDominantColor(bitmap)
-            getSupportActionBar()?.setBackgroundDrawable( ColorDrawable(dominantColor))
+            supportActionBar?.setBackgroundDrawable( ColorDrawable(dominantColor))
             setStatusBarColor(dominantColor + 10)
             binding.titleDetail.setText(response.title)
             binding.mainMovieDetail.visibility = View.VISIBLE

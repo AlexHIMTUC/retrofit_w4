@@ -2,6 +2,7 @@ package com.training.retrofit_w4.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.training.retrofit_w4.ViewModel.MovieViewModel
@@ -24,6 +25,8 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(MovieViewModel::class.java)
         viewModel.getNowPlaying(1)
         viewModel.curData.observe(this) { response ->
+            binding.homePageProgressBar.visibility = View.GONE
+            binding.movieListContent.visibility = View.VISIBLE
             binding.recyclerView.layoutManager = LinearLayoutManager(this)
             adapter = RetrofitPageAdapter(response)
             binding.recyclerView.adapter = adapter
